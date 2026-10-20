@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ajuda | HeroVerse</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            color: #253047;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            color: #dbeafe;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 20px;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #0000000a;
+        }
+
+        h2 {
+            color: #1d4ed8;
+        }
+
+        code {
+            background: #eef2ff;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        pre {
+            overflow-x: auto;
+            background: #172033;
+            color: #e2e8f0;
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        a {
+            color: #1d4ed8;
+        }
+
+        .botao {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>HeroVerse</h1>
+    <p>Guia de utilização da API de heróis</p>
+</header>
+
+<main>
+
+    <section>
+        <h2>O que posso fazer com esta API?</h2>
+
+        <p>
+            A HeroVerse é uma API REST para gerenciar o universo de heróis.
+            Ela permite trabalhar com heróis, poderes, fraquezas, perfis
+            e equipes por meio de requisições HTTP.
+        </p>
+
+        <ul>
+            <li>Cadastrar novos registros.</li>
+            <li>Consultar registros existentes.</li>
+            <li>Pesquisar informações usando filtros disponíveis.</li>
+            <li>Atualizar dados cadastrados.</li>
+            <li>Excluir registros.</li>
+            <li>Relacionar heróis, poderes, fraquezas, perfis e equipes,
+                conforme as regras de cada endpoint.</li>
+        </ul>
+
+        <a class="botao" href="/swagger-ui/index.html">
+            Voltar para o Swagger
+        </a>
+    </section>
+
+    <section>
+        <h2>Como executar uma requisição?</h2>
+
+        <ol>
+            <li>Abra a documentação pelo botão acima.</li>
+            <li>Escolha o endpoint que deseja utilizar.</li>
+            <li>Clique em <strong>Try it out</strong>.</li>
+            <li>Preencha os parâmetros necessários.</li>
+            <li>Se houver um corpo JSON, informe os dados solicitados.</li>
+            <li>Clique em <strong>Execute</strong>.</li>
+            <li>Confira a resposta e o código HTTP retornado.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Entendendo os métodos HTTP</h2>
+
+        <ul>
+            <li><strong>GET:</strong> consulta informações.</li>
+            <li><strong>POST:</strong> cria um registro ou executa uma ação.</li>
+            <li><strong>PUT:</strong> atualiza informações.</li>
+            <li><strong>DELETE:</strong> exclui um registro.</li>
+        </ul>
+
+        <p>
+            Os métodos disponíveis dependem de cada endpoint documentado
+            no Swagger.
+        </p>
+    </section>
+
+    <section>
+        <h2>Como funciona a paginação?</h2>
+
+        <p>
+            A paginação permite consultar uma lista aos poucos,
+            em vez de solicitar todos os registros de uma só vez.
+        </p>
+
+        <p>
+            <strong>page:</strong> indica o número da página. A primeira
+            página normalmente é a página zero.
+        </p>
+
+        <p>
+            <strong>size:</strong> indica quantos registros você deseja
+            receber por página.
+        </p>
+
+        <p>Exemplo de consulta:</p>
+
+        <pre><code>GET /heroi?page=0&amp;size=10</code></pre>
+
+        <p>
+            Nesse exemplo, a requisição solicita a primeira página,
+            com até 10 registros. O caminho <code>/heroi</code> é
+            ilustrativo: confirme o caminho real na documentação.
+        </p>
+
+        <p>Outros exemplos:</p>
+
+        <pre><code>?page=0&amp;size=5
+?page=1&amp;size=10
+?page=2&amp;size=10</code></pre>
+
+        <p>
+            Se houver 23 registros e forem solicitados 10 por página,
+            a distribuição será de 10 registros na primeira página,
+            10 na segunda e 3 na terceira.
+        </p>
+
+        <p>
+            <strong>Importante:</strong> o tamanho máximo permitido
+            depende da configuração do projeto. O parâmetro
+            <code>size</code> representa a quantidade solicitada,
+            mas não garante que todos os registros estarão disponíveis.
+        </p>
+    </section>
+
+    <section>
+        <h2>Códigos de resposta HTTP</h2>
+
+        <ul>
+            <li><strong>200 OK:</strong> requisição realizada com sucesso.</li>
+            <li><strong>201 Created:</strong> registro criado com sucesso,
+                quando esse código é utilizado.</li>
+            <li><strong>204 No Content:</strong> operação concluída sem
+                conteúdo de resposta.</li>
+            <li><strong>400 Bad Request:</strong> dados inválidos ou
+                requisição incorreta.</li>
+            <li><strong>404 Not Found:</strong> registro não encontrado.</li>
+            <li><strong>500 Internal Server Error:</strong> erro interno
+                inesperado no servidor.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Boas práticas</h2>
+
+        <ul>
+            <li>Confira os campos obrigatórios antes de enviar dados.</li>
+            <li>Utilize os IDs exigidos pelos endpoints relacionados.</li>
+            <li>Leia os exemplos de resposta disponíveis no Swagger.</li>
+            <li>Use a paginação ao consultar listas grandes.</li>
+            <li>Confira o código HTTP para identificar o resultado da operação.</li>
+        </ul>
+    </section>
+
+</main>
+
+<footer>
+    HeroVerse — Universo de Heróis
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+
+/* ========================================
+   API DOS HEROIS - TEMA SUPER-HEROI
+   ======================================== */
+
+/* Fundo geral e texto */
+body {
+    background: #0b1020;
+    color: #e8eefc;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.swagger-ui {
+    color: #e8eefc;
+}
+
+/* Cabeçalho */
+.swagger-ui .topbar {
+    background: linear-gradient(90deg, #101a35, #172b50);
+    border-bottom: 3px solid #e63946;
+    padding: 12px 0;
+}
+
+.swagger-ui .topbar .download-url-wrapper {
+    display: none;
+}
+
+/* Área principal */
+.swagger-ui .wrapper {
+    max-width: 1200px;
+}
+
+/* Título e descrição da API */
+.swagger-ui .info .title {
+    color: #ffffff;
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.swagger-ui .info p,
+.swagger-ui .info li,
+.swagger-ui .info h2,
+.swagger-ui .info h3 {
+    color: #b9c7e6;
+}
+
+/* Cartões dos grupos de endpoints */
+.swagger-ui .opblock-tag {
+    color: #ffffff;
+    border-bottom: 1px solid #283957;
+    font-size: 21px;
+    font-weight: 700;
+    padding: 16px 12px;
+}
+
+.swagger-ui .opblock-tag:hover {
+    background: #151f37;
+}
+
+/* Blocos dos endpoints */
+.swagger-ui .opblock {
+    background: #111a2d;
+    border: 1px solid #2c3c5a;
+    border-radius: 10px;
+    margin: 12px 0;
+    box-shadow: 0 4px 14px #00000030;
+    overflow: hidden;
+}
+
+.swagger-ui .opblock .opblock-summary {
+    border-bottom: 1px solid #2c3c5a;
+}
+
+.swagger-ui .opblock .opblock-summary-description,
+.swagger-ui .opblock .opblock-summary-path {
+    color: #f1f5ff;
+}
+
+/* Cores dos métodos HTTP */
+.swagger-ui .opblock.opblock-get {
+    border-color: #2c91e8;
+    background: #10243a;
+}
+
+.swagger-ui .opblock.opblock-post {
+    border-color: #29b878;
+    background: #102b29;
+}
+
+.swagger-ui .opblock.opblock-put {
+    border-color: #e5ad32;
+    background: #302719;
+}
+
+.swagger-ui .opblock.opblock-delete {
+    border-color: #e63946;
+    background: #321a25;
+}
+
+.swagger-ui .opblock.opblock-get .opblock-summary-method {
+    background: #237cc1;
+}
+
+.swagger-ui .opblock.opblock-post .opblock-summary-method {
+    background: #16845b;
+}
+
+.swagger-ui .opblock.opblock-put .opblock-summary-method {
+    background: #b78018;
+}
+
+.swagger-ui .opblock.opblock-delete .opblock-summary-method {
+    background: #c92f42;
+}
+
+/* Área de parâmetros e respostas */
+.swagger-ui .opblock-body,
+.swagger-ui .opblock-section-header {
+    background: #111a2d;
+}
+
+.swagger-ui .opblock-section-header h4,
+.swagger-ui .parameter__name,
+.swagger-ui .parameter__type,
+.swagger-ui .response-col_status,
+.swagger-ui table thead tr th,
+.swagger-ui table tbody tr td {
+    color: #e8eefc;
+}
+
+.swagger-ui .model-box,
+.swagger-ui .model,
+.swagger-ui section.models {
+    background: #111a2d;
+    border-color: #2c3c5a;
+}
+
+.swagger-ui .model-title,
+.swagger-ui .model-box-control,
+.swagger-ui .property,
+.swagger-ui .prop-type {
+    color: #d8e3fa;
+}
+
+/* Campos de texto */
+.swagger-ui input,
+.swagger-ui select,
+.swagger-ui textarea {
+    background: #0b1324;
+    color: #ffffff;
+    border: 1px solid #405579;
+    border-radius: 6px;
+}
+
+.swagger-ui input:focus,
+.swagger-ui select:focus,
+.swagger-ui textarea:focus {
+    border-color: #4c9aff;
+    outline: 2px solid #4c9aff40;
+}
+
+/* Botões */
+.swagger-ui .btn {
+    border-radius: 6px;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.swagger-ui .btn.execute {
+    background: #d92f45;
+    border-color: #d92f45;
+    color: #ffffff;
+}
+
+.swagger-ui .btn.execute:hover {
+    background: #f04455;
+}
+
+.swagger-ui .btn.cancel {
+    border-color: #526789;
+    color: #dce7ff;
+}
+
+/* Blocos de JSON e respostas */
+.swagger-ui .highlight-code,
+.swagger-ui .microlight {
+    background: #080d18 !important;
+    color: #dce7ff !important;
+    border-radius: 6px;
+}
+
+/* Links */
+.swagger-ui a {
+    color: #63b3ff;
+}
+
+.swagger-ui a:hover {
+    color: #9bd0ff;
+}
+
+/* Tabelas e divisórias */
+.swagger-ui table {
+    border-color: #2c3c5a;
+}
+
+.swagger-ui .responses-inner h4,
+.swagger-ui .responses-inner h5 {
+    color: #ffffff;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .swagger-ui .info .title {
+        font-size: 25px;
+    }
+
+    .swagger-ui .wrapper {
+        padding: 0 12px;
+    }
+
+    .swagger-ui .opblock-tag {
+        font-size: 18px;
+    }
+}

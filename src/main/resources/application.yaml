@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: apiHeroi
+
+springdoc:
+  swagger-ui:
+    custom-css-url: /swagger-herois.css
